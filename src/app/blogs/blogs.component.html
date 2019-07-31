@@ -1,0 +1,21 @@
+<h2>My Blogs</h2>
+
+<div>
+  <label>Blog name:
+    <input #blogName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(blogName.value); blogName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="blogs">
+  <li *ngFor="let blog of blogs">
+    <a routerLink="/detail/{{blog.id}}">
+      <span class="badge">{{blog.id}}</span> {{blog.blogName}}
+    </a>
+    <button class="delete" title="delete blog"
+    (click)="delete(blog);$event.stopPropagation()">x</button>
+  </li>
+</ul>
