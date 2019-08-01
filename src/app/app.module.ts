@@ -10,27 +10,33 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 import { ResourcesComponent } from './resources/resources.component';
 import { BlogService } from './blog.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
-
-import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { BlogSearchComponent } from './blog-search/blog-search.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { AboutComponent } from './about/about.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { HtmlLineBreaksPipe } from './_helpers/html-line-breaks.pipe';
+
+import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    HtmlLineBreaksPipe,
+    PageHeaderComponent,
     BlogsComponent,
     BlogDetailComponent,
     ResourcesComponent,
     MessagesComponent,
-    BlogSearchComponent
+    BlogSearchComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
